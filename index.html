@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>biolens — Sankha Cooray · bio &amp; medical work</title>
+<meta name="description" content="A research lens on biology and medicine — Sankha Cooray's exposure and side projects in bio-engineering, medical tools, and biosensing.">
+<link rel="canonical" href="https://biolens.sankhacooray.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="biolens">
+<meta property="og:title" content="biolens — Sankha Cooray · bio &amp; medical work">
+<meta property="og:description" content="A research lens on biology and medicine — exposure and side projects in bio-engineering, medical tools, and biosensing.">
+<meta property="og:url" content="https://biolens.sankhacooray.com/">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="biolens — Sankha Cooray · bio &amp; medical work">
+<meta name="twitter:description" content="A research lens on biology and medicine — exposure and side projects in bio-engineering, medical tools, and biosensing.">
+
+<meta name="theme-color" content="#08110f">
+
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #08110f;
+  --surface: #0f1a18;
+  --surface2: #152521;
+  --border: #1f322d;
+  --border-soft: #182621;
+  --text: #ebf2ef;
+  --text-dim: #9bb0aa;
+  --text-muted: #607872;
+  --gold: #4ec9a3;        /* jade */
+  --gold-dim: #2e8c70;
+  --gold-soft: rgba(78,201,163,0.08);
+  --cyan: #6bc3d6;        /* cool cyan */
+  --cyan-dim: #4a8a99;
+  --cyan-soft: rgba(107,195,214,0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --maxw: 1080px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(800px 400px at 20% -10%, rgba(78,201,163,0.06), transparent 60%),
+    radial-gradient(700px 500px at 100% 20%, rgba(107,195,214,0.04), transparent 60%);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+a { color: inherit; text-decoration: none; }
+
+.site-header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(8,17,15,0.7); border-bottom: 1px solid var(--border-soft); }
+.site-header .inner { max-width: var(--maxw); margin: 0 auto; padding: 18px 28px; display: flex; align-items: center; gap: 32px; }
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand-mark { font-family: 'Instrument Serif', serif; font-size: 28px; color: var(--gold); letter-spacing: -0.5px; }
+.brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; }
+.nav { margin-left: auto; display: flex; gap: 24px; font-size: 14px; color: var(--text-dim); }
+.nav a:hover { color: var(--text); }
+@media (max-width: 640px) { .nav { display: none; } }
+
+.hero { max-width: var(--maxw); margin: 0 auto; padding: 120px 28px 80px; }
+.hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; }
+.hero h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 28px; }
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero .lede { font-size: 19px; color: var(--text-dim); max-width: 640px; margin-bottom: 40px; }
+.hero .meta { display: flex; flex-wrap: wrap; gap: 8px 14px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
+.hero .meta span::before { content: "◦"; margin-right: 10px; color: var(--gold-dim); }
+
+.section { max-width: var(--maxw); margin: 0 auto; padding: 72px 28px; border-top: 1px solid var(--border-soft); }
+.section-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px; }
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); letter-spacing: 1px; }
+.section h2 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 36px; letter-spacing: -0.5px; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.about-grid p { font-size: 16px; color: var(--text-dim); }
+.about-grid p + p { margin-top: 16px; }
+.about-grid strong { color: var(--text); font-weight: 500; }
+.about-grid .accent { color: var(--gold); }
+@media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, transform 0.2s; }
+.card:hover { border-color: var(--border); transform: translateY(-2px); }
+.card .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+.card .role.cool { color: var(--cyan); }
+.card h3 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; letter-spacing: -0.2px; }
+.card .where { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+.card p { font-size: 14px; color: var(--text-dim); }
+.card .link { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; display: inline-flex; align-items: center; gap: 6px; }
+.card .link.cool { color: var(--cyan); }
+.card .link::after { content: "→"; transition: transform 0.2s; }
+.card .link:hover::after { transform: translateX(3px); }
+.card .link.muted { color: var(--text-muted); pointer-events: none; }
+.card .link.muted::after { content: "·"; }
+
+.areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.area { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px; display: flex; align-items: flex-start; gap: 14px; transition: border-color 0.2s, background 0.2s; }
+.area:hover { border-color: var(--gold-dim); background: var(--surface2); }
+.area .glyph { width: 36px; height: 36px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 18px; color: var(--gold); flex-shrink: 0; }
+.area .body { flex: 1; min-width: 0; }
+.area .name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.area .desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+.research-intro { font-size: 17px; color: var(--text-dim); max-width: 680px; margin-bottom: 36px; }
+.research-intro .cyan { color: var(--cyan); }
+
+.note { margin-top: 24px; font-size: 13px; color: var(--text-muted); font-style: italic; padding-left: 12px; border-left: 2px solid var(--border); }
+
+.disclaimer { margin-top: 24px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+.disclaimer strong { color: var(--text); font-weight: 500; }
+
+footer { max-width: var(--maxw); margin: 0 auto; padding: 60px 28px 80px; border-top: 1px solid var(--border-soft); margin-top: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: baseline; font-size: 13px; color: var(--text-muted); }
+footer .mark { font-family: 'Instrument Serif', serif; color: var(--gold); font-size: 20px; }
+footer .links { margin-left: auto; display: flex; gap: 20px; }
+footer .links a:hover { color: var(--text); }
+
+.tag { display: inline-block; padding: 3px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--gold-dim); color: var(--gold); background: var(--gold-soft); }
+.tag.cool { border-color: var(--cyan-dim); color: var(--cyan); background: var(--cyan-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <div class="brand">
+      <span class="brand-mark">biolens</span>
+      <span class="brand-tag">sankha cooray</span>
+    </div>
+    <nav class="nav">
+      <a href="#about">about</a>
+      <a href="#areas">areas</a>
+      <a href="#projects">projects</a>
+      <a href="#ethics">ethics</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">bio · medical · biosensing</div>
+  <h1>A research lens on<br>biology and <em>medicine</em>.</h1>
+  <p class="lede">
+    Side projects, collaborations, and small tools at the edge of bio-engineering,
+    medical informatics, and biosensing — built from the outside by an engineer
+    who likes asking biologists hard questions.
+  </p>
+  <div class="meta">
+    <span>Singapore</span>
+    <span>engineer · not a clinician</span>
+    <span>research collaborator</span>
+  </div>
+</section>
+
+<!-- ─── ABOUT ───────────────────────────────────────────── -->
+<section class="section" id="about">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2>About</h2>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>
+        I'm an engineer who keeps ending up adjacent to <strong>biology, medicine,
+        and biosensing</strong>. Sometimes that means a side project with a clinician
+        friend; sometimes it means writing software for a research lab; sometimes
+        it's just my own curiosity about a measurement I don't yet understand.
+      </p>
+      <p>
+        This page is the <strong class="accent">lens</strong> — a place to gather
+        those threads in one view, so the bio-medical work doesn't get lost
+        among the rest of the projects I do.
+      </p>
+    </div>
+    <div>
+      <p>
+        Most of the work here is <strong>collaborative or instrumental</strong>:
+        building the tool, the dataset, the dashboard, the deep-link, the
+        analysis script — so the people doing the actual clinical or biological
+        work can move faster.
+      </p>
+      <p>
+        New projects will be added as they reach a state worth showing — with
+        the appropriate consent, anonymisation, and framing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AREAS ───────────────────────────────────────────── -->
+<section class="section" id="areas">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2>Areas of Interest</h2>
+  </div>
+
+  <p class="research-intro">
+    The recurring threads — where engineering instinct meets a biology or
+    medicine question.
+  </p>
+
+  <div class="areas">
+    <div class="area">
+      <div class="glyph">⚕</div>
+      <div class="body">
+        <div class="name">Medical informatics</div>
+        <div class="desc">Patient records, history tracking, longitudinal data tools — the unglamorous backbone of care.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">⌬</div>
+      <div class="body">
+        <div class="name">Biosensing</div>
+        <div class="desc">Wearables, body scans, and the messy business of turning a signal into a number you can trust.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">℞</div>
+      <div class="body">
+        <div class="name">Medication analysis</div>
+        <div class="desc">Tooling around prescriptions, side effects, and visualising treatment timelines.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">⚙</div>
+      <div class="body">
+        <div class="name">Healthcare access</div>
+        <div class="desc">Channelling, booking, and friction-removal — small interfaces between patients and systems.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">⬢</div>
+      <div class="body">
+        <div class="name">Bio-engineering</div>
+        <div class="desc">Hardware-adjacent work where a folded paper structure or a small device meets a body or a sample.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">◧</div>
+      <div class="body">
+        <div class="name">Research tooling</div>
+        <div class="desc">Scripts, dashboards, and one-off interfaces for collaborators in clinical and lab settings.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ────────────────────────────────────────── -->
+<section class="section" id="projects">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2>Selected Projects</h2>
+    <span class="tag">private / in progress</span>
+  </div>
+
+  <p class="research-intro">
+    A few of the bio-medical side projects from the workspace. Most are
+    private repositories — descriptions only, with links added where the work
+    is published.
+  </p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="role">medical informatics</div>
+      <h3>Medical history tracker</h3>
+      <div class="where">private project · family use</div>
+      <p>
+        A small longitudinal record tool — appointments, prescriptions,
+        scans — built for a single patient's care continuity.
+      </p>
+      <span class="link muted">private</span>
+    </div>
+
+    <div class="card">
+      <div class="role">biosensing</div>
+      <h3>Withings body-scan integration</h3>
+      <div class="where">personal data tooling</div>
+      <p>
+        Connecting Withings body-composition scans to a personal data view —
+        long-term trends instead of single-day readings.
+      </p>
+      <span class="link muted">private</span>
+    </div>
+
+    <div class="card">
+      <div class="role">medication</div>
+      <h3>Hair-medication analysis</h3>
+      <div class="where">analytical side project</div>
+      <p>
+        Visual analysis tooling for hair-related medications — interactions,
+        timelines, and the patterns a spreadsheet doesn't show.
+      </p>
+      <span class="link muted">private</span>
+    </div>
+
+    <a class="card" href="https://github.com/sankhacooray/echannelling-interceptor" target="_blank" rel="noopener">
+      <div class="role">access</div>
+      <h3>eChannelling interceptor</h3>
+      <div class="where">healthcare booking · Sri Lanka</div>
+      <p>
+        Tooling around the eChannelling appointment system — friction removal
+        for booking with specific doctors in Sri Lanka.
+      </p>
+      <span class="link">repo</span>
+    </a>
+
+    <div class="card">
+      <div class="role cool">future</div>
+      <h3>Open slot</h3>
+      <div class="where">to be added</div>
+      <p>
+        New bio &amp; medical projects will be added here as they reach a
+        showable state.
+      </p>
+      <span class="link muted">to be added</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── ETHICS ──────────────────────────────────────────── -->
+<section class="section" id="ethics">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2>Working Principles</h2>
+  </div>
+
+  <p class="research-intro">
+    A handful of rules I try to keep when the work touches a body, a patient,
+    or a clinician's decision.
+  </p>
+
+  <div class="areas">
+    <div class="area">
+      <div class="glyph">◯</div>
+      <div class="body">
+        <div class="name">Engineer, not clinician</div>
+        <div class="desc">The tools are for clinicians and researchers to use — never a substitute for their judgement.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">▢</div>
+      <div class="body">
+        <div class="name">Consent first</div>
+        <div class="desc">Anonymisation, scope, and the right to walk away — agreed up front, not after the dataset exists.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">↔</div>
+      <div class="body">
+        <div class="name">Reversible by default</div>
+        <div class="desc">Any tool that touches a record should be auditable, exportable, and undoable.</div>
+      </div>
+    </div>
+    <div class="area">
+      <div class="glyph">·</div>
+      <div class="body">
+        <div class="name">Small, local, private</div>
+        <div class="desc">Prefer local-first storage and minimum-collection design until the use case demands otherwise.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Note.</strong> Nothing on this page or in linked projects is medical
+    advice. The work here is engineering and tooling around medical contexts —
+    decisions about diagnosis, treatment, or medication should always come from
+    a qualified clinician.
+  </div>
+</section>
+
+<footer>
+  <span class="mark">biolens</span>
+  <span>&copy; 2026 Sankha Cooray · a research lens on biology &amp; medicine</span>
+  <div class="links">
+    <a href="https://sankhacooray.com" target="_blank" rel="noopener">main site</a>
+    <a href="https://ensemble.sankhacooray.com" target="_blank" rel="noopener">ensemble</a>
+  </div>
+</footer>
+
+</body>
+</html>
