@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #08110f;
+    color: #ebf2ef;
+    background-image:
+      radial-gradient(900px 460px at 16% -8%, rgba(78,201,163,0.14), transparent 60%),
+      radial-gradient(820px 560px at 104% 18%, rgba(107,195,214,0.10), transparent 60%);
+    padding: 72px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500;
+    color: #4ec9a3; text-transform: uppercase; letter-spacing: 4px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: 96px; line-height: 1.02; letter-spacing: -2px; margin-top: 28px;
+  }
+  h1 em { color: #4ec9a3; font-style: italic; }
+  .lede {
+    font-size: 25px; color: #9bb0aa; max-width: 720px; margin-top: 30px; line-height: 1.45;
+  }
+  .foot { display: flex; align-items: baseline; gap: 18px; }
+  .mark { font-family: 'Instrument Serif', serif; font-size: 40px; color: #4ec9a3; letter-spacing: -0.5px; }
+  .by { font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #607872; letter-spacing: 1px; }
+  .url { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #9bb0aa; letter-spacing: 1px; }
+  .helix { position: absolute; right: 78px; top: 84px; opacity: 0.9; }
+</style>
+</head>
+<body>
+  <svg class="helix" width="150" height="150" viewBox="0 0 150 150">
+    <g fill="none" stroke="#4ec9a3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+      <path d="M42 18 C112 45 112 105 42 132"/>
+      <path d="M108 18 C38 45 38 105 108 132"/>
+      <line x1="52" y1="45" x2="98" y2="45"/>
+      <line x1="60" y1="75" x2="90" y2="75"/>
+      <line x1="52" y1="105" x2="98" y2="105"/>
+    </g>
+  </svg>
+
+  <div>
+    <div class="eyebrow">bio · medicine · biosensing</div>
+    <h1>A research lens on <em>living systems</em>.</h1>
+    <div class="lede">Exposure and side projects in bio-engineering, medical tools, and biosensing.</div>
+  </div>
+
+  <div class="foot">
+    <span class="mark">biolens</span>
+    <span class="by">Sankha Cooray</span>
+    <span class="url">biolens.sankhacooray.com</span>
+  </div>
+</body>
+</html>
