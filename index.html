@@ -106,8 +106,8 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 24px; } }
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-.card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, transform 0.2s; }
-.card:hover { border-color: var(--border); transform: translateY(-2px); }
+.card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, box-shadow 0.2s, background 0.2s; }
+.card:hover { border-color: var(--border); background: var(--surface2); box-shadow: 0 6px 24px rgba(0,0,0,0.28); }
 .card .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
 .card .role.cool { color: var(--cyan); }
 .card h3 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; letter-spacing: -0.2px; }
@@ -312,56 +312,61 @@ footer .links a:hover { color: var(--text); }
   </div>
 
   <p class="research-intro">
-    A few of the bio-medical side projects from the workspace. Most are
-    private repositories — descriptions only, with links added where the work
-    is published.
+    A few of the bio-medical projects from the workspace. None are live on a
+    public subdomain yet — they're still <span class="cyan">in the lab</span>,
+    so these are descriptions only, listed to show where the work is heading.
   </p>
 
   <div class="card-grid">
 
     <div class="card">
-      <div class="role">medical informatics</div>
-      <h3>Medical history tracker</h3>
-      <div class="where">private project · family use</div>
+      <div class="role">biosensing</div>
+      <h3>bodyscan</h3>
+      <div class="where">self-tracking · Withings + Apps Script</div>
       <p>
-        A small longitudinal record tool — appointments, prescriptions,
-        scans — built for a single patient's care continuity.
+        A personal dashboard for Withings Body Scan data — surfacing every
+        body-composition metric the scale (and a ScanWatch 2) records, fed by a
+        serverless Apps Script proxy that keeps the Withings secret and rotating
+        token server-side.
       </p>
-      <span class="link muted">private</span>
+      <span class="link muted">in the lab</span>
     </div>
 
     <div class="card">
-      <div class="role">biosensing</div>
-      <h3>Withings body-scan integration</h3>
-      <div class="where">personal data tooling</div>
+      <div class="role">healthcare access</div>
+      <h3>doctorlanka</h3>
+      <div class="where">healthcare booking · Sri Lanka</div>
       <p>
-        Connecting Withings body-composition scans to a personal data view —
-        long-term trends instead of single-day readings.
+        A faster weekly calendar over Sri Lanka's eChannelling — compare doctors,
+        hospitals and session times at a glance, then finish on the official site.
+        Ships as a local aggregator (doctorlanka-server) and a Chrome extension
+        that drives the real booking flow through checkout.
       </p>
-      <span class="link muted">private</span>
+      <span class="link muted">in the lab</span>
     </div>
 
     <div class="card">
       <div class="role">medication</div>
-      <h3>Hair-medication analysis</h3>
-      <div class="where">analytical side project</div>
+      <h3>medcheck</h3>
+      <div class="where">print tool · family use</div>
       <p>
-        Visual analysis tooling for hair-related medications — interactions,
-        timelines, and the patterns a spreadsheet doesn't show.
+        A printable daily medicine checklist — morning, mid-morning and night
+        dose cards with tick boxes, laid out two-up on an A5 cut sheet.
       </p>
-      <span class="link muted">private</span>
+      <span class="link muted">in the lab</span>
     </div>
 
-    <a class="card" href="https://github.com/sankhacooray/echannelling-interceptor" target="_blank" rel="noopener">
-      <div class="role">access</div>
-      <h3>eChannelling interceptor</h3>
-      <div class="where">healthcare booking · Sri Lanka</div>
+    <div class="card">
+      <div class="role">bio-engineering</div>
+      <h3>tenslab</h3>
+      <div class="where">hardware + firmware · ESP32-C3</div>
       <p>
-        Tooling around the eChannelling appointment system — friction removal
-        for booking with specific doctors in Sri Lanka.
+        A hackable bridge between a consumer TENS unit and the modern web — an
+        ESP32-C3 taps the remote's fire button so a web page, video timeline,
+        phone tilt or sound can trigger a pulse.
       </p>
-      <span class="link">repo</span>
-    </a>
+      <span class="link muted">in the lab</span>
+    </div>
 
     <div class="card">
       <div class="role cool">future</div>
