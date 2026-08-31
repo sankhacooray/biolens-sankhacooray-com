@@ -108,6 +108,7 @@ a { color: inherit; text-decoration: none; }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
 .card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, box-shadow 0.2s, background 0.2s; }
 .card:hover { border-color: var(--border); background: var(--surface2); box-shadow: 0 6px 24px rgba(0,0,0,0.28); }
+.proj-thumb { display: block; width: 100%; aspect-ratio: 800 / 420; object-fit: cover; object-position: top center; border-radius: var(--radius-sm); border: 1px solid var(--border-soft); margin-bottom: 16px; }
 .card .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
 .card .role.cool { color: var(--cyan); }
 .card h3 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; letter-spacing: -0.2px; }
@@ -320,6 +321,7 @@ footer .links a:hover { color: var(--text); }
   <div class="card-grid">
 
     <div class="card">
+      <img class="proj-thumb" loading="lazy" src="thumbs/bodyscan.jpg" alt="bodyscan preview">
       <div class="role">biosensing</div>
       <h3>bodyscan</h3>
       <div class="where">self-tracking · Withings + Apps Script</div>
@@ -333,6 +335,7 @@ footer .links a:hover { color: var(--text); }
     </div>
 
     <div class="card">
+      <img class="proj-thumb" loading="lazy" src="thumbs/doctorlanka.jpg" alt="doctorlanka preview">
       <div class="role">healthcare access</div>
       <h3>doctorlanka</h3>
       <div class="where">healthcare booking · Sri Lanka</div>
@@ -346,6 +349,7 @@ footer .links a:hover { color: var(--text); }
     </div>
 
     <div class="card">
+      <img class="proj-thumb" loading="lazy" src="thumbs/medcheck.jpg" alt="medcheck preview">
       <div class="role">medication</div>
       <h3>medcheck</h3>
       <div class="where">print tool · family use</div>
@@ -357,6 +361,7 @@ footer .links a:hover { color: var(--text); }
     </div>
 
     <div class="card">
+      <img class="proj-thumb" loading="lazy" src="thumbs/tenslab.jpg" alt="tenslab preview">
       <div class="role">bio-engineering</div>
       <h3>tenslab</h3>
       <div class="where">hardware + firmware · ESP32-C3</div>
